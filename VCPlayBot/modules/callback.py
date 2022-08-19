@@ -10,36 +10,36 @@ from VCPlayBot.modules.play import cb_admin_check
 @Client.on_callback_query(filters.regex("cbstart"))
 async def cbstart(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""<b>✨ **Welcome user, i'm {query.message.from_user.mention}** \n
-💭 **[{BOT_NAME}](https://t.me/{BOT_USERNAME}) 𝗮𝗹𝗹𝗼𝘄 𝘆𝗼𝘂 𝘁𝗼 𝗽𝗹𝗮𝘆 𝗺𝘂𝘀𝗶𝗰 𝗼𝗻 𝗴𝗿𝗼𝘂𝗽𝘀 𝘁𝗵𝗿𝗼𝘂𝗴𝗵 𝘁𝗵𝗲 𝗻𝗲𝘄 𝗧𝗲𝗹𝗲𝗴𝗿𝗮𝗺'𝘀 𝘃𝗼𝗶𝗰𝗲 𝗰𝗵𝗮𝘁𝘀 !**
+        f"""<b>✨ **Hoş geldiniz , {query.message.from_user.mention}** \n
+💭 **[{BOT_NAME}](https://t.me/{BOT_USERNAME}) Yeni Telegram'ın sesli sohbetleri aracılığıyla gruplarda müzik çalmanıza izin verir !**
 
-💡 **𝗙𝗶𝗻𝗱 𝗼𝘂𝘁 𝗮𝗹𝗹 𝘁𝗵𝗲 𝗕𝗼𝘁'𝘀 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀 𝗮𝗻𝗱 𝗵𝗼𝘄 𝘁𝗵𝗲𝘆 𝘄𝗼𝗿𝗸 𝗯𝘆 𝗰𝗹𝗶𝗰𝗸𝗶𝗻𝗴 𝗼𝗻 𝘁𝗵𝗲 » 📚 𝗖𝗼𝗺𝗺𝗮𝗻𝗱𝘀 𝗯𝘂𝘁𝘁𝗼𝗻 !**
+💡 **Bot'un tüm komutlarını ve nasıl çalıştıklarını öğrenmek için » 📚 Komutlar düğmesi !**
 
-❓ **𝗙𝗼𝗿 𝗶𝗻𝗳𝗼𝗿𝗺𝗮𝘁𝗶𝗼𝗻 𝗮𝗯𝗼𝘂𝘁 𝗮𝗹𝗹 𝗳𝗲𝗮𝘁𝘂𝗿𝗲 𝗼𝗳 𝘁𝗵𝗶𝘀 𝗯𝗼𝘁, 𝗷𝘂𝘀𝘁 𝘁𝘆𝗽𝗲 /help**
+❓ **Bu botun tüm özellikleri hakkında bilgi için, sadece yazın /help**
 </b>""",
         reply_markup=InlineKeyboardMarkup(
             [ 
                 [
                     InlineKeyboardButton(
-                        "➕ Add me to your Group ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
+                        "➕ Beni Grubunuza Ekle ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
                 ],[
                     InlineKeyboardButton(
-                        "❓ How to use Me", callback_data="cbhowtouse")
+                        "❓ Beni nasıl kullanabilirim?", callback_data="cbhowtouse")
                 ],[
                     InlineKeyboardButton(
-                         "📚 Commands", callback_data="cbcmds"
+                         "📚 Komut", callback_data="cbcmds"
                     ),
                     InlineKeyboardButton(
-                        "💝 Donate", url=f"https://t.me/{OWNER_NAME}")
+                        "🕊️sahibim", url=f"https://t.me/{OWNER_NAME}")
                 ],[
                     InlineKeyboardButton(
-                        "👥 Official Group", url=f"https://t.me/{SUPPORT_GROUP}"
+                        "👥 destek Group", url=f"https://t.me/{SUPPORT_GROUP}"
                     ),
                     InlineKeyboardButton(
-                        "📣 Official Channel", url=f"https://t.me/{UPDATES_CHANNEL}")
+                        "📣 destek Kanalı", url=f"https://t.me/{UPDATES_CHANNEL}")
                 ],[
                     InlineKeyboardButton(
-                        "🧪 Source Code 🧪", url="https://github.com/QuennArzoo/VCPlayBot"
+                        "🧪 Source Codem by 🧪", url="https://t.me/ruhsuzbeyyy"
                     )
                 ]
             ]
@@ -51,7 +51,7 @@ async def cbstart(_, query: CallbackQuery):
 @Client.on_callback_query(filters.regex("cbhelp"))
 async def cbhelp(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""<b>💡 Hello there, welcome to the help menu !</b>
+        f"""<b>💡 Merhaba, yardım menüsüne hoş geldiniz !</b>
 
 **in this menu you can open several available command menus, in each command menu there is also a brief explanation of each command**
 
@@ -60,33 +60,33 @@ async def cbhelp(_, query: CallbackQuery):
             [
                 [
                     InlineKeyboardButton(
-                        "📚 Basic Cmd", callback_data="cbbasic"
+                        "📚 Temel komut", callback_data="cbbasic"
                     ),
                     InlineKeyboardButton(
-                        "📕 Advanced Cmd", callback_data="cbadvanced"
+                        "📕 Gelişmiş komut", callback_data="cbadvanced"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "📘 Admin Cmd", callback_data="cbadmin"
+                        "📘 Admin ", callback_data="cbadmin"
                     ),
                     InlineKeyboardButton(
-                        "📗 Sudo Cmd", callback_data="cbsudo"
+                        "📗 Sudo ", callback_data="cbsudo"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "📙 Owner Cmd", callback_data="cbowner"
+                        "📙 Owner ", callback_data="cbowner"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "📔 Fun Cmd", callback_data="cbfun"
+                        "📔 Fun ", callback_data="cbfun"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "🏡 BACK TO HELP", callback_data="cbguide"
+                        "🏡 YARDIM IÇIN GERI DÖN", callback_data="cbguide"
                     )
                 ]
             ]
@@ -97,26 +97,26 @@ async def cbhelp(_, query: CallbackQuery):
 @Client.on_callback_query(filters.regex("cbbasic"))
 async def cbbasic(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""<b>🏮 here is the basic commands</b>
+        f"""<b>🏮 işte temel commands</b>
 
 🎧 [ GROUP VC CMD ]
 
-- /play (song name) - play song from youtube
-- /ytpplay (song name) - play song directly from youtube 
-- /playlist - show the list song in queue
-- /song (song name) - download song from youtube
-- /search (video name) - search video from youtube detailed
-- /video (video name) - download video from youtube detailed
-- /lyrics - (song name) lyrics scrapper
+- /play (song name) - youtube'dan şarkı çal
+- /ytpplay (song name) - şarkıyı doğrudan youtube'dan çal 
+- /playlist - liste şarkısını sırada göster
+- /song (song name) - youtube'dan şarkı indir
+- /search (video name) - youtube'dan detaylı video ara
+- /video (video name) - youtube'dan ayrıntılı video indir
+- /lyrics - (song name) şarkı sözleri scrapper
 
 🎧 [ CHANNEL VC CMD ]
 
-- /cplay - stream music on channel voice chat
-- /cplayer - show the song in streaming
-- /cpause - pause the streaming music
-- /cresume - resume the streaming was paused
-- /cskip - skip streaming to the next song
-- /cend - end the streaming music
+- /cplay - kanal sesli sohbetinde müzik akışı
+- /cplayer - şarkıyı akışta gösterme
+- /cpause - müzik akışını duraklatma
+- /cresume - akışın duraklatıldığını devam ettir
+- /cskip - akışı bir sonraki şarkıya atla
+- /cson - müzik akışını sonlandırma
 - /admincache - refresh the admin cache
 - /userbotjoin: Invite @{ASSISTANT_NAME} Userbot to your chat
 
@@ -125,7 +125,7 @@ async def cbbasic(_, query: CallbackQuery):
             [
                 [
                     InlineKeyboardButton(
-                        "🏡 BACK", callback_data="cbhelp"
+                        "🏡 GERİ", callback_data="cbhelp"
                     )
                 ]
             ]
@@ -136,7 +136,7 @@ async def cbbasic(_, query: CallbackQuery):
 @Client.on_callback_query(filters.regex("cbadvanced"))
 async def cbadvanced(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""<b>🏮 here is the advanced commands</b>
+        f"""<b>🏮 İşte gelişmiş komutlar</b>
 
 /start (in group) - see the bot alive status
 /reload - reload bot and refresh the admin list
@@ -149,7 +149,7 @@ async def cbadvanced(_, query: CallbackQuery):
             [
                 [
                     InlineKeyboardButton(
-                        "🏡 BACK", callback_data="cbhelp"
+                        "🏡 GERİ", callback_data="cbhelp"
                     )
                 ]
             ]
@@ -160,13 +160,13 @@ async def cbadvanced(_, query: CallbackQuery):
 @Client.on_callback_query(filters.regex("cbadmin"))
 async def cbadmin(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""<b>🏮 here is the admin commands</b>
+        f"""<b>🏮 işte yönetici komutları</b>
 
-/player - show the music playing status
-/pause - pause the music streaming
-/resume - resume the music was paused
-/skip - skip to the next song
-/end - stop music streaming
+/player - müzik çalma durumunu gösterme
+/pause - müzik akışını duraklatma
+/resume - devam et müzik duraklatıldı
+/skip - sonraki şarkıya geç
+/son - müzik akışını durdur
 /userbotjoin - invite assistant join to your group
 /auth - authorized user for using music bot
 /deauth - unauthorized for using music bot
@@ -183,7 +183,7 @@ async def cbadmin(_, query: CallbackQuery):
             [
                 [
                     InlineKeyboardButton(
-                        "🏡 BACK", callback_data="cbhelp"
+                        "🏡 GERİ", callback_data="cbhelp"
                     )
                 ]
             ]
@@ -194,11 +194,9 @@ async def cbadmin(_, query: CallbackQuery):
 @Client.on_callback_query(filters.regex("cbsudo"))
 async def cbsudo(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""<b>🏮 here is the sudo commands</b>
+        f"""<b>🏮 işte sudo komutları</b>
 
-/userbotleaveall - order the assistant to leave from all group
-/gcast - send a broadcast message trought the assistant
-/stats - show the bot statistic
+
 /rmd - remove all downloaded files
 /clean - Remove all raw files
 
@@ -207,7 +205,7 @@ async def cbsudo(_, query: CallbackQuery):
             [
                 [
                     InlineKeyboardButton(
-                        "🏡 BACK", callback_data="cbhelp"
+                        "🏡 GERİ", callback_data="cbhelp"
                     )
                 ]
             ]
@@ -218,7 +216,7 @@ async def cbsudo(_, query: CallbackQuery):
 @Client.on_callback_query(filters.regex("cbowner"))
 async def cbowner(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""<b>🏮 here is the owner commands</b>
+        f"""<b>🏮 işte sahip komutları</b>
 
 /stats - show the bot statistic
 /broadcast - send a broadcast message from bot
@@ -233,7 +231,7 @@ async def cbowner(_, query: CallbackQuery):
             [
                 [
                     InlineKeyboardButton(
-                        "🏡 BACK", callback_data="cbhelp"
+                        "🏡 GERİ", callback_data="cbhelp"
                     )
                 ]
             ]
@@ -246,8 +244,8 @@ async def cbfun(_, query: CallbackQuery):
     await query.edit_message_text(
         f"""<b>🏮 here is the fun commands</b>
 
-/chika - check it by yourself
-/wibu - check it by yourself
+/chika - kendiniz kontrol edin
+/wibu - kendiniz kontrol edin
 /asupan - check it by yourself
 /truth - check it by yourself
 /dare - check it by yourself
@@ -268,24 +266,24 @@ async def cbfun(_, query: CallbackQuery):
 @Client.on_callback_query(filters.regex("cbguide"))
 async def cbguide(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""❓ HOW TO USE THIS BOT:
+        f"""❓ BU BOT NASIL KULLANILIR?:
 
-1.) first, add me to your group.
-2.) then promote me as admin and give all permissions except anonymous admin.
-3.) add @{ASSISTANT_NAME} to your group or type /userbotjoin to invite her.
-4.) turn on the voice chat first before start to play music.
+1.) önce beni grubunuza ekleyin.
+2.) sonra beni yönetici olarak tanıtın ve anonim yönetici hariç tüm izinleri verin.
+3.) @{ASSISTANT_NAME} ekleyin veya davet etmek için /userbotjoin yazın.
+4.) müzik çalmaya başlamadan önce sesli sohbeti açın.
 
 ⚡ __Powered by {BOT_NAME} A.I__""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "📚 Command List", callback_data="cbhelp"
+                        "📚 Komut Listesi", callback_data="cbhelp"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "🗑 Close", callback_data="close"
+                        "🗑 Kapatmak", callback_data="close"
                     )
                 ]
             ]
@@ -302,38 +300,38 @@ async def close(_, query: CallbackQuery):
 @cb_admin_check
 async def cbback(_, query: CallbackQuery):
     await query.edit_message_text(
-        "**💡 here is the control menu of bot :**",
+        "**💡 İşte botun kontrol menüsü :**",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "⏸ pause", callback_data="cbpause"
+                        "⏸ Duraklat", callback_data="cbpause"
                     ),
                     InlineKeyboardButton(
-                        "▶️ resume", callback_data="cbresume"
+                        "▶️ devamet", callback_data="cbresume"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "⏩ skip", callback_data="cbskip"
+                        "⏩ atla", callback_data="cbskip"
                     ),
                     InlineKeyboardButton(
-                        "⏹ end", callback_data="cbend"
+                        "⏹ son", callback_data="cbend"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "⛔ anti cmd", callback_data="cbdelcmds"
+                        "⛔ kapat", callback_data="cbdelcmds"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "🛄 group tools", callback_data="cbgtools"
+                        "🛄 grup araçları", callback_data="cbgtools"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "🗑 Close", callback_data="close"
+                        "🗑 Kapatmak", callback_data="close"
                     )
                 ]
             ]
